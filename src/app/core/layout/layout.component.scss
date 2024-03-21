@@ -1,0 +1,39 @@
+/* layout.component.css */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягиваем layout на всю высоту вьюпорта */
+}
+
+header {
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  background: #f4f4f4;
+  padding: 0.5rem;
+  justify-content: center; /* Центрируем навигацию */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0 1rem;
+}
+
+main {
+  flex: 1; /* main занимает все доступное пространство */
+  padding: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
