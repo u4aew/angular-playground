@@ -30,3 +30,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "dist/todo-angular-app-codepen/browser/*"  # Путь к собранным файлам
           target: "/usr/share/nginx/html/angular"  # Целевой путь на сервере
+          strip_components: 3
