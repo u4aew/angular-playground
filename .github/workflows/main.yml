@@ -1,0 +1,32 @@
+name: Build and Deploy Angular App
+
+on:
+  push:
+    branches: [ main ]  # Запускать GitHub Actions при пуше в ветку main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Выбор окружения
+
+    steps:
+      - uses: actions/checkout@v3  # Шаг для проверки кода из репозитория
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Установка версии Node.js
+
+      - name: Install Dependencies
+        run: npm ci  # Установка зависимостей
+
+      - name: Build Angular App
+        run: npm run build -- --prod  # Сборка Angular приложения для продакшена
+
+      - name: Deploy to Server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_URL }}
+          username: ${{ secrets.SSH_LOGIN }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "dist/todo-angular-app-codepen/browser/*"  # Путь к собранным файлам
+          target: "/usr/share/nginx/html/angular"  # Целевой путь на сервере
