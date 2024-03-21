@@ -20,7 +20,7 @@ jobs:
         run: npm ci  # Установка зависимостей
 
       - name: Build Angular App
-        run: npm run build -- --prod  # Сборка Angular приложения для продакшена
+        run: npm run build -- -c production   # Сборка Angular приложения для продакшена
 
       - name: Deploy to Server
         uses: appleboy/scp-action@master
