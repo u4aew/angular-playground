@@ -1,1 +1,7 @@
-<p>profile works!</p>
+<div *ngIf="isLoading">Loading...</div>
+
+<div *ngIf="!isLoading">
+  <p>ID: {{ userInfo?.id }}</p>
+  <p>Name: {{ userInfo?.name }}</p>
+  <p>Email: {{ userInfo?.email }}</p>
+</div>
