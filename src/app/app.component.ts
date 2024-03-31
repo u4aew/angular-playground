@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CountService } from "./count.service";
 import { LayoutComponent } from "./core/layout/layout.component";
 
 @Component({
@@ -13,9 +12,4 @@ import { LayoutComponent } from "./core/layout/layout.component";
 export class AppComponent {
   title = 'todo-angular-appCodepen';
 
-  constructor(public countService: CountService) {}
-
-  add() {
-    this.countService.add();
-  }
-}
+  constructor() {}}
