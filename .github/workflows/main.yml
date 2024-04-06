@@ -2,7 +2,7 @@ name: Build and Deploy Angular App
 
 on:
   push:
-    branches: [ main ]  # Запускать GitHub Actions при пуше в ветку main
+    branches: [ main, develop ]  # Запускать GitHub Actions при пуше в ветку main, develop
 
 jobs:
   build:
